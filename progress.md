@@ -4,13 +4,11 @@
 >
 > **GitHub:** https://github.com/GYChunnnn/super-ecommerce
 >
-> ### 最新提交
+> ### 最新提交 (9 commits)
 > ```
-> 82113a4 docs: 更新 Git 日志引用
-> ba2c33b docs: 更新进度 - 全部7阶段完成
+> 005b7b2 docs: 更新 Git 日志最新引用
 > 2d6407c feat: Elasticsearch 商品搜索 (阶段五)
 > ab2d7de feat: 完成阶段1-4 + 阶段6-7核心功能
-> 52d301b feat: 初始化电商项目 - Spring Boot + MyBatis-Plus 骨架 + 用户模块
 > ```
 
 ## 总体进度
@@ -23,7 +21,7 @@
 | 四 | 异步与消息 | ✅ 已完成 | 2026-07-07 | RabbitMQ + 死信队列 + 幂等 |
 | 五 | 搜索与推荐 | ✅ 已完成 | 2026-07-08 | ES 8.11 + MultiMatch + Highlight + IK |
 | 六 | 工程化 | ✅ 已完成 | 2026-07-08 | Knife4j + JUnit 5 |
-| 七 | 加分项 | ✅ 已完成 | 2026-07-08 | WebSocket 订单推送 + 数据统计 |
+| 七 | 加分项 | ✅ 已完成 | 2026-07-08 | WebSocket + 数据统计 |
 
 **🎉 全部 7 阶段完成！**
 
