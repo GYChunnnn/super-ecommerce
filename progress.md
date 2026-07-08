@@ -3,13 +3,6 @@
 > 最后更新：2026-07-08
 >
 > **GitHub:** https://github.com/GYChunnnn/super-ecommerce
->
-> ### 最新提交 (9 commits)
-> ```
-> 005b7b2 docs: 更新 Git 日志最新引用
-> 2d6407c feat: Elasticsearch 商品搜索 (阶段五)
-> ab2d7de feat: 完成阶段1-4 + 阶段6-7核心功能
-> ```
 
 ## 总体进度
 
