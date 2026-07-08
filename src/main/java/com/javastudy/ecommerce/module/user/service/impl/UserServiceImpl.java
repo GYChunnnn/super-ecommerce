@@ -3,6 +3,7 @@ package com.javastudy.ecommerce.module.user.service.impl;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.javastudy.ecommerce.common.exception.BusinessException;
+import com.javastudy.ecommerce.config.JwtUtil;
 import com.javastudy.ecommerce.module.user.mapper.UserMapper;
 import com.javastudy.ecommerce.module.user.model.dto.UserLoginRequest;
 import com.javastudy.ecommerce.module.user.model.dto.UserLoginResponse;
@@ -18,6 +19,7 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
 
     private final BCryptPasswordEncoder bCryptPasswordEncoder;
+    private final JwtUtil jwtUtil;
 
     @Override
     public void register(UserRegisterRequest request) {
@@ -56,8 +58,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
             throw new BusinessException(403, "账号已被禁用");
         }
 
-        // TODO: 生成 JWT Token（第二阶段实现）
-        String token = "eyJ_algo_placeholder_token_" + user.getId();
+        // 生成 JWT Token
+        String token = jwtUtil.generateToken(user.getId(), user.getUsername());
 
         return new UserLoginResponse(token, user.getId(), user.getUsername(), user.getNickname());
     }
