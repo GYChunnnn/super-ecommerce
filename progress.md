@@ -6,6 +6,7 @@
 >
 > ### 最新提交
 > ```
+> ba2c33b docs: 更新进度 - 全部7阶段完成
 > 2d6407c feat: Elasticsearch 商品搜索 (阶段五)
 > ab2d7de feat: 完成阶段1-4 + 阶段6-7核心功能
 > 52d301b feat: 初始化电商项目 - Spring Boot + MyBatis-Plus 骨架 + 用户模块
