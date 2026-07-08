@@ -6,8 +6,7 @@
 >
 > ### 最新提交
 > ```
-> 1448314 docs: 更新进度文件状态
-> 1c4e526 docs: 更新学习进度 - 阶段七完成
+> 2d6407c feat: Elasticsearch 商品搜索 (阶段五)
 > ab2d7de feat: 完成阶段1-4 + 阶段6-7核心功能
 > 52d301b feat: 初始化电商项目 - Spring Boot + MyBatis-Plus 骨架 + 用户模块
 > ```
@@ -20,11 +19,11 @@
 | 二 | 安全与认证 | ✅ 已完成 | 2026-07-07 | JWT + Spring Security |
 | 三 | 性能与并发 ⭐ | ✅ 已完成 | 2026-07-07 | Redis + 三问题 + 锁 + 秒杀 |
 | 四 | 异步与消息 | ✅ 已完成 | 2026-07-07 | RabbitMQ + 死信队列 + 幂等 |
-| 五 | 搜索与推荐 | ⬜ 未完成 | — | 选做 |
+| 五 | 搜索与推荐 | ✅ 已完成 | 2026-07-08 | ES 8.11 + MultiMatch + Highlight + IK 分词 |
 | 六 | 工程化 | ✅ 已完成 | 2026-07-08 | Knife4j + JUnit 5 |
 | 七 | 加分项 | ✅ 已完成 | 2026-07-08 | WebSocket 订单推送 + 数据统计 |
 
-**核心 6 阶段全部完成，代码已推送 GitHub。**
+**🎉 全部 7 阶段完成！**
 
 ---
 
@@ -84,9 +83,9 @@
 
 | # | 任务 | 状态 | 备注 |
 |---|------|------|------|
-| 5.1 | Elasticsearch 整合 | ⬜ 待开始 | |
-| 5.2 | 商品搜索（关键词、筛选、排序） | ⬜ 待开始 | |
-| 5.3 | 搜索高亮 | ⬜ 待开始 | |
+| 5.1 | Elasticsearch 整合 | ✅ 已完成 | ES 8.11 Docker + ElasticsearchClient + IK 分词器 |
+| 5.2 | 商品搜索（关键词、筛选、排序） | ✅ 已完成 | MultiMatch(name^3+description) + BoolQuery + 排序 |
+| 5.3 | 搜索高亮 | ✅ 已完成 | HighlightField <em> 标签包裹，name + description 字段 |
 
 ---
 
