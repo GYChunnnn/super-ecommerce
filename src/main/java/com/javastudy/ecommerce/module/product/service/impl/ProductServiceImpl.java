@@ -12,6 +12,7 @@ import com.javastudy.ecommerce.module.product.model.dto.ProductUpdateRequest;
 import com.javastudy.ecommerce.module.product.model.entity.Category;
 import com.javastudy.ecommerce.module.product.model.entity.Product;
 import com.javastudy.ecommerce.module.product.service.ProductCacheService;
+import com.javastudy.ecommerce.module.product.service.ProductSearchService;
 import com.javastudy.ecommerce.module.product.service.ProductService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
@@ -31,6 +32,7 @@ public class ProductServiceImpl implements ProductService {
     private final CategoryMapper categoryMapper;
     private final ProductMapper productMapper;
     private final ProductCacheService productCacheService;
+    private final ProductSearchService productSearchService;
 
     // ==================== 分类 ====================
 
@@ -108,6 +110,8 @@ public class ProductServiceImpl implements ProductService {
         productMapper.insert(product);
         // 写入缓存
         productCacheService.updateCache(product);
+        // 同步 ES
+        productSearchService.syncProduct(product);
         return product;
     }
 
@@ -151,6 +155,8 @@ public class ProductServiceImpl implements ProductService {
         productMapper.updateById(product);
         // 刷新缓存
         productCacheService.updateCache(product);
+        // 同步 ES
+        productSearchService.syncProduct(product);
         return product;
     }
 
@@ -162,6 +168,8 @@ public class ProductServiceImpl implements ProductService {
         productMapper.deleteById(id);
         // 删除缓存
         productCacheService.evictCache(id);
+        // 从 ES 删除
+        productSearchService.deleteProduct(id);
     }
 
     @Override

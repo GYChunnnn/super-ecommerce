@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   mysql:
     image: mysql:8.0
@@ -40,6 +38,18 @@ services:
     environment:
       RABBITMQ_DEFAULT_USER: admin
       RABBITMQ_DEFAULT_PASS: admin123
+      TZ: Asia/Shanghai
+
+  elasticsearch:
+    image: elasticsearch:8.11.0
+    container_name: ecommerce-es
+    restart: always
+    ports:
+      - "9200:9200"
+    environment:
+      discovery.type: single-node
+      ES_JAVA_OPTS: -Xms512m -Xmx512m
+      xpack.security.enabled: "false"
       TZ: Asia/Shanghai
 
 volumes:
